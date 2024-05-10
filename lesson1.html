@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My jQuery Project</title>
+
+</head>
+<body>
+    <h1 id="text">Ritu</h1>
+    <button id="changeName">change Name</button>
+    <button id="BackName">Back Name</button>
+<script src="jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('#changeName').click(function(){
+        $('#text').text('Ritu Nirmal');
+        });
+        $('#BackName').click(function(){
+        $('#text').text('Ritu');
+        });
+    });
+  </script>
+    
+</body>
+</html>

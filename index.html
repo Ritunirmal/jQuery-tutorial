@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Lessons Index</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Lessons Index</h1>
+    <table>
+        <tr>
+            <th>Completed</th>
+            <th>Lesson Number</th>
+            <th>Lesson Topic</th>
+            <th>Summary</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="lesson1" /></td>
+            <td>Lesson 1</td>
+            <td>Including jQuery in Your Project</td>
+            <td>
+                <ul>
+                    <li>Download jQuery or Use a CDN</li>
+                    <li>Add the Script Tag</li>
+                    <li>Use the $(document).ready() Function</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="lesson2" /></td>
+            <td>Lesson 2</td>
+            <td>Selecting Elements with jQuery</td>
+            <td>
+                <ul>
+                    <li>Understand jQuery Selectors</li>
+                    <li>Practice Using Selectors</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="lesson3" /></td>
+            <td>Lesson 3</td>
+            <td>DOM Manipulation with jQuery</td>
+            <td>
+                <ul>
+                    <li>Explore DOM Manipulation Methods</li>
+                    <li>Create DOM Manipulation Examples</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="lesson4" /></td>
+            <td>Lesson 4</td>
+            <td>Event Handling with jQuery</td>
+            <td>
+                <ul>
+                    <li>Learn Event Binding</li>
+                    <li>Handle Events</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="lesson5" /></td>
+            <td>Lesson 5</td>
+            <td>jQuery Effects and Animations</td>
+            <td>
+                <ul>
+                    <li>Explore Animation Methods</li>
+                    <li>Customize Animations</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="lesson6" /></td>
+            <td>Lesson 6</td>
+            <td>AJAX Interactions with jQuery</td>
+            <td>
+                <ul>
+                    <li>Understand AJAX Concepts</li>
+                    <li>Practice Making AJAX Calls</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Check if checkboxes are checked and update their status
+        document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+            checkbox.checked = sessionStorage.getItem(checkbox.id) === 'true';
+            checkbox.addEventListener('change', function() {
+                sessionStorage.setItem(checkbox.id, checkbox.checked);
+            });
+        });
+    </script>
+</body>
+</html>

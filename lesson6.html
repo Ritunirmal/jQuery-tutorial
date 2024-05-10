@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic AJAX Interactions with jQuery</title>
+
+</head>
+<body>
+<h1>Basic AJAX Interactions with jQuery</h1>
+<button id="getData">Get data</button>
+<table id="data" border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+        </tr>
+        <tbody id="showData">
+
+        </tbody>
+    </thead>
+</table>
+<script src="jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#getData').click(function(){
+            $.ajax({
+                url:'data.json',
+                method:'GET',
+                dataType:'json',
+                success:function(response){
+                    console.log(response);
+                 displayData(response);
+                },error:function(xhr,status,error){
+             console.error('Error:',error);
+                }
+            });
+        });
+        function displayData(data){
+            var tableBody = $('#showData');
+            $.each(data,function(index,user){
+              var raw = '<tr>'+
+                '<td>'+ user.id +'</td>'+'<td>'+ user.name +'</td>'+'<td>' + user.email + '</td>' +
+                '</tr>';
+                tableBody.append(raw);
+            });
+        }
+    });
+</script>
+</body>
+</html>

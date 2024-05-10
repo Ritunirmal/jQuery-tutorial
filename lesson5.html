@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic jQuery Effects and Animations</title>
+<style>
+    #myElement{
+        width:200px;
+        height:200px;
+        background-color: #32a852;
+        border:1px solid black;
+        margin:10px;
+        /* display:none; */
+    }
+</style>
+</head>
+<body>
+<h1>Basic jQuery Effects and Animations</h1>
+<button id="show">Show</button>
+<button id="hide">Hide</button>
+<button id="toggle">Toggle</button>
+<button id="fadein">Fade In</button>
+<button id="fadeOut">Fade Out</button>
+<button id="fadeToggle">Fade toggle</button>
+<button id="fadetime">Fade Time</button>
+<button id="slideDown">slide Down</button>
+<button id="slideUp">slide Up</button>
+<button id="slideToggle">slide Toggle</button>
+<div id="myElement"></div>
+<script src="jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#show').click(function(){
+           $('#myElement').show(); 
+        });
+        $('#hide').click(function(){
+           $('#myElement').hide(); 
+        });
+        $('#toggle').click(function(){
+           $('#myElement').toggle(); 
+        });
+        $('#fadein').click(function(){
+           $('#myElement').fadeIn(); 
+        });
+        $('#fadeOut').click(function(){
+           $('#myElement').fadeOut(); 
+        });
+        $('#fadeToggle').click(function(){
+           $('#myElement').fadeToggle(); 
+        });
+        $('#fadetime').click(function(){
+           $('#myElement').fadeTo('slow',0.5); 
+        });
+        $('#slideDown').click(function(){
+           $('#myElement').slideDown(); 
+        });
+        $('#slideUp').click(function(){
+           $('#myElement').slideUp(); 
+        });
+        $('#slideToggle').click(function(){
+           $('#myElement').slideToggle(); 
+        });
+       $('#myElement').animate({
+        width:'250px',
+        height:'500px',
+        opacity:'0.5'
+       });
+    });
+</script>
+</body>
+</html>
+   

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic DOM Manipulation Examples</title>
+
+</head>
+<body>
+<h1>Basic DOM Manipulation Examples</h1>
+<div id="myDiv">
+   
+
+</div>
+<p id="para">
+    Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
+</p>
+
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#myDiv').html('<h1>INTRODUCTION</h1>');
+    $('#myDiv').append('<p>Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>');
+    $('#myDiv').prepend('<p>Before text</p>');
+    $('#myDiv').remove();
+    $('#para').addClass('newClass');
+    $('#para').removeClass('newClass');
+    $('.newClass').css('color','blue');
+    $('#para').text('New Text added');
+  });
+</script>
+</body>
+</html>
